@@ -15,3 +15,5 @@ Installation is quick:
 Run `php app/console list` from command line.
 
 There is a **Demo** command inside `src/Acme/Demo` dir. You can use it as base for your own commands.
+
+If you create a new namespace for your commands - what you'll probably do - remember to update `composer.json` file to load your new namespace and `app/console`to look for your commands in the right place.
