@@ -1,7 +1,10 @@
-Base Command
-============
+Console
+=======
 
 Foundation project for Symfony Console application.
+
+The advantage of using this project as a start for your own projects is that it has a CommandMapper that loads all 
+command classes within a specific dir.
 
 ## Installation
 
