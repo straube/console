@@ -1,12 +1,20 @@
 {
+    "name": "straube/console",
+    "description": "Foundation project for Symfony Console application",
+    "keywords": [
+        "console",
+        "symfony"
+    ],
+    "license": "MIT",
+    "type": "project",
     "require": {
-        "symfony/console": "2.*",
-        "symfony/finder": "2.*"
+        "symfony/console": "3.*",
+        "symfony/finder": "3.*"
     },
     "autoload": {
         "psr-0": {
             "Straube": "src/",
-            "Acme": "src/"
+            "App": "src/"
         }
     }
 }

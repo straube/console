@@ -1,6 +1,6 @@
 <?php
 
-namespace Straube\Command;
+namespace Straube\Console;
 
 use Symfony\Component\Console\Application;
 use Symfony\Component\Finder\Finder;
@@ -33,7 +33,7 @@ class CommandMapper
      */
     public function __construct($basePath, $namespace)
     {
-        $this->basePath = rtrim($basePath, '/').'/';
+        $this->basePath = rtrim($basePath, '/') . '/';
         $this->namespace = $namespace;
     }
 
@@ -54,7 +54,7 @@ class CommandMapper
      */
     public function getPath()
     {
-        return $this->basePath.str_replace('\\', '/', $this->namespace).'/';
+        return $this->basePath . str_replace('\\', '/', $this->namespace) . '/';
     }
 
     /**
@@ -72,7 +72,7 @@ class CommandMapper
             if (null !== ($relativePath = $file->getRelativePath())) {
                 $ns .= '\\'.strtr($relativePath, '/', '\\');
             }
-            $r = new \ReflectionClass(rtrim($ns, '\\').'\\'.$file->getBasename('.php'));
+            $r = new \ReflectionClass(rtrim($ns, '\\') . '\\' . $file->getBasename('.php'));
             if ($r->isSubclassOf('Symfony\\Component\\Console\\Command\\Command')
                     && !$r->isAbstract()
                     && !$r->getConstructor()->getNumberOfRequiredParameters()) {
@@ -80,5 +80,4 @@ class CommandMapper
             }
         }
     }
-
 }
