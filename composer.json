@@ -11,10 +11,21 @@
         "symfony/console": "3.*",
         "symfony/finder": "3.*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4"
+    },
     "autoload": {
         "psr-0": {
             "Straube": "src/",
             "App": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
